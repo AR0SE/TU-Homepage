@@ -1,3 +1,51 @@
+.pointerBox{
+width: auto;
+margin: 0 auto;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+grid-gap: 50px;
+box-sizing: border-box;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+
+}
+.pointerBox .box{
+  position: relative;
+  border: 2px solid #262626;
+  min-height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 36px;
+  transition: 0.5s;
+}
+.pointerBox .box:before{
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #262626;
+
+  box-sizing: border-box;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  transition: 0.5s;
+  bottom: -15px;
+  transform: rotate(45deg);
+
+
+}
+.pointerBox .box:hover,
+.pointerBox .box:hover:before{
+  background: #262626;
+  color: #fff;
+
+
+}
+
 #about_text{
   text-align: center;
   font-family: 'Dekiru';
@@ -11,6 +59,7 @@ footer{
   bottom: 50px;
   color: white;
 
+
 }
 form{
   margin-top: 420px;
@@ -21,6 +70,9 @@ form{
 
 }
 #contact-form{
+  color: white
+}
+::placeholder{
   color: white;
 }
 .form-control{
@@ -71,9 +123,10 @@ body{
   height: 100vh;
   font-family: 'Dekiru';
   font-weight: 400;
-  background: url("../img/background.jpeg");
+  background: url("../img/background.jpeg") no-repeat;
   background-position: center;
   background-size: cover;
+
 
 
 
@@ -107,7 +160,7 @@ h1{
   text-align: center;
   font-size: 48px;
   font-weight: 600;
-  font-family: Yozakura, Dekiru;
+  font-family: Dekiru;
 
 }
 /*.slideshow{
@@ -163,7 +216,7 @@ nav ul li a {
 }
 
 a:hover{
-  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  box-shadow: 0 0 30px rgba(0,0,0,0.4);
   border-radius: 20px;
 }
 @font-face {
@@ -175,7 +228,7 @@ a:hover{
   font-family: 'Dekiru';
   src: url('../fonts/Dekiru.ttf') format('truetype');
 }
-@media screen and (max-width: 864px) {
+@media screen and (max-width: 667px) {
       .logo {
             padding: 0;
             font-family: Yozakura;
@@ -188,7 +241,7 @@ a:hover{
             width: 100%;
             height: 100%;
             z-index: -1;
-            background: #f3f3f3;
+            background: url("../img/menubackground.jpeg");
             opacity: 0;
             transition: all 0.2s ease;
 
@@ -232,10 +285,10 @@ a:hover{
       .nav-wrapper ul li a {
             padding: 10px 24px;
             opacity: 0;
-            color: #000;
-            font-size: 14px;
+            color: black;
+            font-size: 28px;
             font-weight: 600;
-            letter-spacing: 1.2px;
+            letter-spacing: 2px;
             transform: translateX(-20px);
             transition: all 0.2s ease;
       }
@@ -243,7 +296,7 @@ a:hover{
       .nav-btn {
             position: fixed;
             right: 10px;
-            top: 10px;
+            top: 19px;
             display: block;
             width: 48px;
             height: 48px;
@@ -254,11 +307,12 @@ a:hover{
 
       .nav-btn i {
             display: block;
-            width: 20px;
-            height: 2px;
-            background: white;
-            border-radius: 2px;
+            width: 25px;
+            height: 3px;
+            background: black;
+            border-radius: 3px;
             margin-left: 14px;
+
       }
 
       .nav-btn i:nth-child(1) {

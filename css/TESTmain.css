@@ -1,0 +1,53 @@
+body{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #ffef63;;
+
+}
+.pointerBox{
+width: 1200px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+grid-gap: 50px;
+box-sizing: border-box;
+
+}
+.pointerBox .box{
+  position: relative;
+  border: 2px solid #262626;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 36px;
+  transition: 0.5s;
+}
+.pointerBox .box:before{
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #262626;
+  background: #ffef63;
+  box-sizing: border-box;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  transition: 0.5s;
+  bottom: -15px;
+  transform: rotate(45deg);
+
+
+}
+.pointerBox .box:hover,
+.pointerBox .box:hover:before{
+  background: #262626;
+  color: #fff;
+
+
+}
